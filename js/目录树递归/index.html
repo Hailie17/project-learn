@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>无极限目录树</title>
+  </head>
+  <body>
+    <div class="lists"></div>
+    <script>
+      var data = [
+        {
+          name: "111",
+          child: [
+            {
+              name: "111",
+              child: [{ name: "23" }, { name: "233" }, { name: "3e" }],
+            },
+            {
+              name: "111",
+              child: [{ name: "23" }, { name: "233" }, { name: "3e" }],
+            },
+            {
+              name: "111",
+              child: [{ name: "23" }, { name: "233" }, { name: "3e" }],
+            },
+          ],
+        },
+        {
+          name: "222",
+          child: [
+            {
+              name: "111",
+              child: [{ name: "23" }, { name: "233" }, { name: "3e" }],
+            },
+            {
+              name: "111",
+              child: [{ name: "23" }, { name: "233" }, { name: "3e" }],
+            },
+            {
+              name: "111",
+              child: [{ name: "23" }, { name: "233" }, { name: "3e" }],
+            },
+          ],
+        },
+        {
+          name: "333",
+          child: [
+            {
+              name: "111",
+              child: [{ name: "23" }, { name: "233" }, { name: "3e" }],
+            },
+          ],
+        },
+        {
+          name: "333",
+          child: [
+            {
+              name: "111",
+              child: [{ name: "23" }, { name: "233" }, { name: "3e" }],
+            },
+          ],
+        },
+      ];
+
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelector(".lists").innerHTML = recurseList(data);
+      });
+      function recurseList(data) {
+        var str = "<ul>";
+        for (var i = 0; i < data?.length; i++) {
+          str += "<li>" + data[i].name + "</li>";
+          if (data[i].child) {
+            recurseList(data[i].child);
+          }
+        }
+        str += "</li>";
+        console.log(str);
+        return str;
+      }
+    </script>
+  </body>
+</html>

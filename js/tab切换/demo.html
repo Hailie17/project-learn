@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="my">
+      <ul class="tab-tit">
+        <li :class="n==1 ? 'active' : ''">标题一</li>
+        <li :class="n==2 ? 'active' : ''">标题二</li>
+        <li :class="n==3 ? 'active' : ''">标题三</li>
+        <li :class="n==4 ? 'active' : ''">标题四</li>
+      </ul>
+    </div>
+    <div class="tab-con">
+      <div v-show="n==1">内容一</div>
+      <div v-show="n==2">内容二</div>
+      <div v-show="n==3">内容三</div>
+      <div v-show="n==4">内容四</div>
+    </div>
+
+    <script></script>
+  </body>
+</html>
